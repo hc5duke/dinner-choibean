@@ -1,5 +1,5 @@
 Dinner::Application.routes.draw do
   resources :meals
 
-  # root :to => 'welcome#index'
+  root :to => 'meals#index'
 end
