@@ -9,3 +9,9 @@
 
 .clear &nbsp;
 = render 'week', :week => @next_week
+
+%ul
+  - @places.each do |place, frequency|
+    %li
+      = frequency
+      = place
