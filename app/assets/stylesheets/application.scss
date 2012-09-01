@@ -22,13 +22,18 @@
     input {
       border-style: solid;
       background-color: transparent;
-      border: none;
+      border: 1px solid transparent;
       border-radius: 0 !important;
       box-shadow: none !important;
     }
   }
   &.weekday {
     background-color: #df8;
+  }
+  &:hover form input {
+    border-color: #CCC;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
   }
 }
 .centered {
