@@ -10,8 +10,16 @@
 .clear &nbsp;
 = render 'week', :week => @next_week
 
+%h3 Places
 %ul
   - @places.each do |place, frequency|
+    %li
+      = frequency
+      = place
+
+%h3 Cooked
+%ul
+  - @cookeds.each do |place, frequency|
     %li
       = frequency
       = place

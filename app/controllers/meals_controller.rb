@@ -19,7 +19,9 @@ class MealsController < ApplicationController
     Meal.where('date >= ? and date <= ?', @first, @last).each do |meal|
       @meals[meal.date] = meal
     end
-    @places = histogram(Meal.all.map(&:name))
+    all_meals = histogram(Meal.all.map(&:name).map{|name|name.downcase.strip})
+    @places  = all_meals.reject{|meal| meal.starts_with?('c:')}
+    @cookeds = all_meals.select{|meal| meal.starts_with?('c:')}
   end
 
   def show
