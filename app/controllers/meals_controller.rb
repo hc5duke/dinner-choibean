@@ -1,6 +1,7 @@
 class MealsController < ApplicationController
   def index
-    @today = Date.today
+    Time.zone = 'Pacific Time (US & Canada)'
+    @today = Time.zone.now.to_date
     @first = @today.beginning_of_week - 1.week
     @last  = @today.end_of_week + 1.week
     @last_week = (@first..@first.end_of_week)
