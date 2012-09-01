@@ -30,7 +30,7 @@ class MealsController < ApplicationController
     @meal = Meal.new(params[:meal])
 
     if @meal.save
-      redirect_to @meal, notice: 'Meal was successfully created.'
+      redirect_to action: 'index'
     else
       render action: "new"
     end
@@ -40,7 +40,7 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
 
     if @meal.update_attributes(params[:meal])
-      redirect_to @meal, notice: 'Meal was successfully updated.'
+      redirect_to action: 'index'
     else
       render action: "edit"
     end
