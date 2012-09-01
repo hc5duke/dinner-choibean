@@ -3,7 +3,7 @@ module MealsHelper
   def weekdays; DAY_MARKERS; end
 
   def nice_print(date)
-    date.strftime '%01m/%-1d'
+    date.strftime '%-1m/%-1d'
   end
 
 end
