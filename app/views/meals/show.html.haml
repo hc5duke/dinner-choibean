@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @meal.name
+%p
+  %b Date:
+  = @meal.date
+%p
+  %b Comment:
+  = @meal.comment
+
+= link_to 'Edit', edit_meal_path(@meal)
+\|
+= link_to 'Back', meals_path
