@@ -13,3 +13,6 @@
 #= require jquery
 #= require jquery_ujs
 #= require_tree .
+$ ($) ->
+  $('.week input').click () ->
+    $(this).select()
