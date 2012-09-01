@@ -2,11 +2,10 @@
   - week.each do |date|
     - klass = 'today' if date == @today
     .date.span1{ :class => klass }
-      - meal = @meals[date]
-      .row-fluid
+      - meal = @meals[date] || Meal.new
+      .row-fluid.centered
         = nice_print(date)
       .row-fluid
-        - if meal
-          = meal.name
-        - else
-          = link_to 'New', new_meal_path
+        = form_for meal do |f|
+          = f.text_field :name, :class => 'span12'
+          = f.hidden_field :date, :value => date

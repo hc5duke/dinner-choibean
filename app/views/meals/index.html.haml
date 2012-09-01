@@ -1,4 +1,7 @@
 .clear &nbsp;
+.row-fluid
+  - weekdays.each do |date|
+    .date.weekday.centered.span1= date
 = render 'week', :week => @last_week
 
 .clear &nbsp;

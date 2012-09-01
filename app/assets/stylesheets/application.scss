@@ -13,8 +13,24 @@
  */
 
 .today {
-  background-color: #ffd;
+  background-color: #fd8;
 }
 .date {
   font-weight: bold;
+  form {
+    margin-bottom: 0;
+    input {
+      border-style: solid;
+      background-color: transparent;
+      border: none;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+  }
+  &.weekday {
+    background-color: #df8;
+  }
+}
+.centered {
+  text-align: center;
 }
