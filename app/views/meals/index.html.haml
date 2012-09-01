@@ -1,4 +1,8 @@
 %table
+  = render 'week', :week => @last_week
+  = render 'week', :week => @this_week
+  = render 'week', :week => @next_week
+
   - @meals.each do |meal|
     %tr
       %td= meal.name

@@ -1,6 +1,16 @@
 class MealsController < ApplicationController
   def index
-    @meals = Meal.all
+    @today = Date.today
+    @first = @today.beginning_of_week - 1.week
+    @last  = @today.end_of_week + 1.week
+    @last_week = (@first..@first.end_of_week)
+    @this_week = (@today.beginning_of_week..@today.end_of_week)
+    @next_week = (@last.beginning_of_week..@last)
+
+    @meals = {}
+    Meal.where('date >= ? and date <= ?', @first, @last).each do |meal|
+      @meals[meal.date] = meal
+    end
   end
 
   def show

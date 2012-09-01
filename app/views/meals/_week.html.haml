@@ -1,0 +1,12 @@
+%tr
+  - week.each do |date|
+    %td.date
+      = date.strftime '%m-%d'
+%tr
+  - week.each do |date|
+    %td
+      - meal = @meals[date]
+      - if meal
+        = meal.name
+      - else
+        = link_to 'New', new_meal_path
