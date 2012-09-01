@@ -1,14 +1,4 @@
-%h1 Listing meals
-
 %table
-  %tr
-    %th Name
-    %th Date
-    %th Comment
-    %th
-    %th
-    %th
-
   - @meals.each do |meal|
     %tr
       %td= meal.name
