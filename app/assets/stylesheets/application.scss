@@ -12,6 +12,9 @@
  *= require_tree .
  */
 
-td.date {
-  width: 100px;
+.today {
+  background-color: #ffd;
+}
+.date {
+  font-weight: bold;
 }

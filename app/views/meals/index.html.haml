@@ -1,17 +1,6 @@
-%table
-  = render 'week', :week => @last_week
-  = render 'week', :week => @this_week
-  = render 'week', :week => @next_week
+.row{ :style => 'text-align:center;' }
+  %h1 Meals
 
-  - @meals.each do |meal|
-    %tr
-      %td= meal.name
-      %td= meal.date
-      %td= meal.comment
-      %td= link_to 'Show', meal
-      %td= link_to 'Edit', edit_meal_path(meal)
-      %td= link_to 'Destroy', meal, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Meal', new_meal_path
+= render 'week', :week => @last_week
+= render 'week', :week => @this_week
+= render 'week', :week => @next_week

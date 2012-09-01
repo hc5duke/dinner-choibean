@@ -1,10 +1,12 @@
-%tr
+.row-fluid.offset3.date
   - week.each do |date|
-    %td.date
-      = date.strftime '%m-%d'
-%tr
+    - klass = 'today' if date == @today
+    .span1{ :class => klass }
+      = nice_print(date)
+.row-fluid.offset3
   - week.each do |date|
-    %td
+    - klass = 'today' if date == @today
+    .span1{ :class => klass }
       - meal = @meals[date]
       - if meal
         = meal.name
