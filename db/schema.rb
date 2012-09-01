@@ -21,4 +21,7 @@ ActiveRecord::Schema.define(:version => 20120901003203) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "meals", ["date"], :name => "index_meals_on_date"
+  add_index "meals", ["name"], :name => "index_meals_on_name"
+
 end

@@ -7,5 +7,8 @@ class CreateMeals < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :meals, :name
+    add_index :meals, :date
   end
 end
